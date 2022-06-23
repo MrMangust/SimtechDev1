@@ -24,9 +24,6 @@
     </div>
 </nav>
 
-
-
-<!--table-->
 <div class="container">
     <div class="row">
         <h5 class="text-center">Списки пользователей</h5>
@@ -38,7 +35,6 @@
                 <th scope="col">Last name</th>
                 <th scope="col">gender</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
             </tr>
             </thead>
             <tbody>
@@ -50,7 +46,6 @@
                 <td><?php echo $user['last_name']; ?></td>
                 <td><?php echo $user['email']; ?></td>
                 <td><?php echo $user['gender']; ?></td>
-                <td><?php echo $user['password']; ?></td>
             </tr>
             <?php endforeach; ?>
             </tbody>
@@ -73,7 +68,7 @@
                 <th scope="col">phone</th>
                 <th scope="col">radio</th>
                 <th scope="col">textarea</th>
-                <th scope="col">asap</th>
+                <th scope="col">radiobutton</th>
                 <th scope="col">checkbox</th>
             </tr>
             </thead>
@@ -81,8 +76,8 @@
 
             <?php foreach($feeds as $feed) :?>
             <tr>
-                <th scope="row"><?php echo $feed['feed_id']; ?></th>
-                <td><?php echo $feed['name']; ?></td>
+                <th scope="row"><?php echo $feed['feed_id'] ;?></th>
+                <td><?php echo $feed['user_name']; ?></td>
                 <td><?php echo $feed['subject']; ?></td>
                 <td><?php echo $feed['email']; ?></td>
                 <td><?php echo $feed['phone']; ?></td>

@@ -3,6 +3,7 @@ require 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+
     $image = $_FILES['image'];
     $types = ["image/jpeg", "image/png"];
 
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pathfile = 'uploads/'. $fileName;
 
 
+
     $user_name = trim($_REQUEST['name']);
     $subject = trim($_REQUEST['subject']);
     $email = trim($_REQUEST['email']);
@@ -28,8 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $asap = trim($_REQUEST['select']);
     $checkbox = trim($_REQUEST['checkbox']);
 
+    $adminmail="enter your email here";
+
     $mysqli->query("INSERT INTO feedback (user_name, subject, email, phone, radio, textarea, asap, checkbox, filepath) VALUES ('$user_name', '$subject','$email', '$phone','$radio','$textarea','$asap','$checkbox', '$pathfile')");
-    mail("ninan2290@gmail.com", $subject, $textarea, $email);
+    mail($adminmail, $subject, $textarea, $email);
 
 }
 
